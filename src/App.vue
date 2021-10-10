@@ -1,16 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <Header title="Task Tracker"/>   
+  </div> 
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Header from './components/Header.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+   Header
+  },
 }
 </script>
 
@@ -22,5 +22,20 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.container{
+  border: 1px solid rgb(57, 57, 97);
+  width: 60%;
+  padding: 20px
+}
+.h1{
+  color: blue;
+}
+.btn{
+  border-radius: 5px;
+  padding: 7px;
+  color: white;
+  cursor: pointer;
+  border: 0;
 }
 </style>
