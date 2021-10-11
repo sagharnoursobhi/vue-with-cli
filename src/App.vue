@@ -1,17 +1,64 @@
 <template>
   <div class="container">
-    <Header title="Task Tracker"/>   
+    <Header title="Task Tracker"/> 
+    <Tasks @last-event= "deleteRowItem" v-bind:tasks = "items"/>  
   </div> 
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import Tasks from './components/Tasks.vue'
 export default {
   name: 'App',
   components: {
-   Header
+   Header,
+   Tasks
   },
+  methods:{
+    deleteRowItem(id1){
+      if(confirm('Are you sure ?')){
+        this.items = this.items.filter(item => item.id !== id1)
+      }
+    }
+  },
+  data(){
+    return{
+      items: []
+    }
+  },
+  created(){
+    this.items = [
+      {
+        id: '1',
+        text: "Doctors Appointment",
+        day: 'March 23th at 1 pm',
+        reminder: true,
+      },
+
+      {
+        id: '2',
+        text: 'Going to swimming pool',
+        day: 'March 25th at 3 pm',
+        reminder: false,
+      },
+
+      {
+        id: '3',
+        text: 'Shopping',
+        day: 'March 28th at 8 am',
+        reminder: true,
+      },
+
+      {
+        id: '4',
+        text: 'Buying concert ticket',
+        day: 'May 1st at 1 pm',
+        reminder: false,
+      }
+    ]
+  }
 }
+
 </script>
 
 <style>
