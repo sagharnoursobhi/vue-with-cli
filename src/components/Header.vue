@@ -1,12 +1,10 @@
 <template>
     <header>
         <h1>{{title}}</h1> 
-        <Button text="Add Task" color="green"/>
     </header>    
 </template>
 
 <script>
-import Button from './Button.vue'
     export default {
         name: 'Header',
         props: {
@@ -14,9 +12,6 @@ import Button from './Button.vue'
                 default: 'Task Tracker',
                 type: String // == props : {title:String}
             }
-        },
-        components: {
-            Button,
         },
     }
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div :key= "item.id" v-for= "item in tasks">
-        <Task @first-event = "$emit('last-event' , item.id)"  :lastProps = "item" />
+        <Task @toggle-reminder="$emit('toggle-array',item.id)"  @first-event = "$emit('last-event' , item.id)"  v-bind:lastProps = "item" />
     </div>
 </template><!-- each time we should use a new emit method to pass the parameter one level up-->
 
@@ -14,6 +14,7 @@ export default{
    props:{
        tasks: Array,
    },
-    emits:['last-event']//get rid of warning of add listenner
+    emits:['last-event' , 'toggle-array']//get rid of warning of add listenner
+
 }
 </script>

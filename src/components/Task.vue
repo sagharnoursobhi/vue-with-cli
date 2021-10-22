@@ -1,8 +1,8 @@
 <template>
-    <div :class= "[lastProps.reminder ? 'reminder' : '' , 'text']">
+    <div @dblclick="$emit('toggle-reminder' , lastProps.id)" :class= "[lastProps.reminder ? 'reminder' : '' , 'text']">
         <h3>
             {{lastProps.text}}
-            <i @click= "onDelete(lastProps.id)" class="far fa-trash-alt"></i>
+            <i @click= "$emit('first-event' , lastProps.id)" class="far fa-trash-alt"></i>
         </h3>
         <p>{{lastProps.day}}</p>
     </div>
@@ -15,11 +15,11 @@ export default {
    props:{
        lastProps: Object
    },
-   methods:{
+   /* methods:{
        onDelete(id){
-           this.$emit('first-event' , id)//first parameter is the name of parent element and the second parameter is the data that we wanna pass from child to parent
+           this.$emit('first-event' , id)//first parameter is the first event passed to parent element and the second parameter is the data that we wanna pass from child to parent
        }
-   }
+   } */
 }
 </script>
 
@@ -31,7 +31,7 @@ export default {
     .reminder{
         border-left: 3px solid rgb(12, 71, 12);
     }
-    .far{
-        cursor: pointer;
+    i{
+        cursor: pointer!important;
     }
 </style>

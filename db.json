@@ -1,0 +1,31 @@
+{
+    "items" : [
+        {
+          "id": "1",
+          "text": "Doctors Appointment",
+          "day": "March 23th at 1 pm",
+          "reminder": true
+        },
+    
+        {
+          "id": "2",
+          "text": "Going to swimming pool",
+          "day": "March 25th at 3 pm",
+          "reminder": false
+        },
+    
+        {
+          "id": "3",
+          "text": "Shopping",
+          "day": "March 28th at 8 am",
+          "reminder": true
+        },
+    
+        {
+          "id": "4",
+          "text": "Buying concert ticket",
+          "day": "May 1st at 1 pm",
+          "reminder": false
+        }
+    ]
+}
